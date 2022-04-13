@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MoviesList from './components/MoviesList';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   const [movies, setMovies] = useState([]);
 
   const fetchMovies = async () => {
+    git
     const response = await fetch('https://swapi.dev/api/films')
     const data = await response.json();
     const transformedMovies = data.results.map(res => {
@@ -26,7 +28,7 @@ function App() {
       </section>
       <section>
         <MoviesList movies={movies} />
-        {movies}
+        <p>Esto puede tardar unos segundos</p>
       </section>
     </React.Fragment>
   );
